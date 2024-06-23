@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+div {
+    margin: 20px;
+}
+h3 {
+color: white;
+font-size: 35px;
+}
+
+p{
+    color: white;
+}
+form {
+    display: inline-block;
+    background-color: #d18dec;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+}
+
+.reset_form{
+display: inline-block;
+background-color: white;
+background-image: url('../img/ninja.jpeg');
+
+}
+
+
+#resetBtn{
+padding: 10px 20px;
+font-size: 16px;
+border: none;
+background-color: #329935;
+color: white;
+margin-top: 100px;
+cursor: pointer;
+}
+
+input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: solid;
+    background-color: rgb(255, 7, 102);
+    box-shadow: 3px 2px 3px rgb(216, 11, 114);
+    color: white;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#activities {
+    margin-top: 20px;
+    text-align: left;
+    display: inline-block;
+}

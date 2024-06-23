@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Your Gold: {{ gold }}</h1>
+    <h2>Moves: {{ moves }} / {{ max_moves }}</h2>
+    {% if game_over %}
+        {% if gold >= winning_gold %}
+            <h2 style="color: green;">Congratulations! You've won the game!</h2>
+        {% else %}
+            <h2 style="color: red;">Game Over! You've lost the game.</h2>
+        {% endif %}
+        <form class="reset_form" action="/reset" method="get">
+            <input  type="submit" value="Reset" id="resetBtn">
+        </form>
+    {% else %}
+        <div>
+            <form action="/process_money" method="post">
+                <h3>Farm</h3>
+                <p>(earns 10-20 golds)</p>
+                <input type="hidden" name="building" value="farm">
+                <input type="submit" value="Find Gold !">
+            </form>
+            <form action="/process_money" method="post">
+                <h3>Cave</h3>
+                <p>(earns 5-10 golds)</p>
+                <input type="hidden" name="building" value="cave">
+                <input type="submit" value="Find Gold !">
+            </form>
+            <form action="/process_money" method="post">
+                <h3>House</h3>
+                <p>(earns 2-5 golds)</p>
+                <input type="hidden" name="building" value="house">
+                <input type="submit" value="Find Gold !">
+            </form>
+            <form action="/process_money" method="post">
+                <h3>Casino</h3>
+                <p>(earns/takes 0-50 golds)</p>
+                <input type="hidden" name="building" value="casino">
+                <input type="submit" value="Find Gold !">
+            </form>
+        </div>
+    {% endif %}
+    <h2>Activities:</h2>
+    <div id="activities">
+        <ul>
+            {% for activity in activities %}
+                <li style="color: {{ activity.color }}">{{ activity.activity }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
