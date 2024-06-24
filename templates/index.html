@@ -10,9 +10,9 @@
     <h2>Moves: {{ moves }} / {{ max_moves }}</h2>
     {% if game_over %}
         {% if gold >= winning_gold %}
-            <h2 style="color: green;">Congratulations! You've won the game!</h2>
+            <h2 class="congrats">Congratulations! You've won the game!</h2>
         {% else %}
-            <h2 style="color: red;">Game Over! You've lost the game.</h2>
+            <h2 Class="gameOver">Game Over! You've lost the game.</h2>
         {% endif %}
         <form class="reset_form" action="/reset" method="get">
             <input  type="submit" value="Reset" id="resetBtn">
