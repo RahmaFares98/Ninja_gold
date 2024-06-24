@@ -2,8 +2,6 @@ from flask import Flask, render_template, redirect, request, session
 import random
 from datetime import datetime
 
-current_time = datetime.now().strftime("%m/%d/%Y, %H:%M:%p")
-
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
 
@@ -41,10 +39,10 @@ def process_money():
 
     # Create activity entry
     if gold_earned >= 0:
-        activity = f"Earned {gold_earned} gold from the {building}! ({current_time})"
+        activity = f"Earned {gold_earned} gold from the {building}! ({datetime.now().strftime('%m/%d/%Y, %H:%M:%p')})"
         color = "green"
     else:
-        activity = f"Lost {abs(gold_earned)} gold at the {building}... Ouch! ({current_time})"
+        activity = f"Lost {abs(gold_earned)} gold at the {building}... Ouch! ({datetime.now().strftime('%m/%d/%Y, %H:%M:%p')})"
         color = "red"
 
     session['activities'].insert(0, {'activity': activity, 'color': color})
