@@ -2,7 +2,7 @@ from flask import Flask, render_template, redirect, request, session
 import random
 from datetime import datetime
 
-current_time = datetime.now().strftime("%I:%M %p")
+current_time = datetime.now().strftime("%m/%d/%Y, %H:%M:%p")
 
 app = Flask(__name__)
 app.secret_key = 'supersecretkey'
